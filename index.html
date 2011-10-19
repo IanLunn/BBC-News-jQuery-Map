@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BBC News jQuery Map</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="map.js"></script>
+</head>
+
+<body>
+
+<form action="" method="get">
+	<div id="map-box">
+        <div id="container-map">
+            <img src="images/map.gif" alt="Map" name="map1" border="0" usemap="#map1Map" id="map" />
+            <map name="map1Map" id="map1Map">
+                <area class="sw" shape="poly" coords="162,319,162,303,186,303,186,264,162,264,162,287,175,282,160,297,140,298,110,335,138,335" alt="sw" />
+                <area class="s" shape="poly" coords="186,264,206,264,206,312,179,313,162,318,162,303,186,303" alt="s" />
+                <area class="se" shape="poly" coords="206,312,243,311,268,298,268,287,251,283,255,279,206,279" alt="se" />
+                <area class="e" shape="poly" coords="206,279,255,279,270,267,276,241,252,230,246,238,237,233,221,233,221,264,206,264" alt="e" />
+                <area class="em" shape="poly" coords="221,264,196,264,196,209,214,209,214,233,221,233" alt="em" />
+                <area class="wm" shape="poly" coords="162,264,196,264,196,209,162,209" alt="wm" />
+                <area class="w" shape="poly" coords="162,209,122,209,130,240,141,236,143,251,119,267,123,281,144,279,154,288,162,288" alt="w" />
+                <area class="yl" shape="poly" coords="214,233,238,233,245,225,225,173,212,167,176,167,176,185,186,185,186,208" alt="yl" />
+                <area class="nw" shape="poly" coords="186,209,169,209,174,184,163,187,156,169,163,155,160,153,176,137,176,185,186,185" alt="nw" />
+                <area class="ne" shape="poly" coords="177,167,213,167,209,165,201,128,192,122,176,137" alt="ne" />
+                <area class="scot" shape="poly" coords="160,153,192,122,177,110,163,114,170,104,179,100,172,93,178,92,198,49,193,42,162,42,141,51,148,32,166,14,169,1,144,7,125,2,114,34,86,47,86,55,106,69,106,79,95,83,95,98,109,97,113,108,106,138,111,138,116,113,132,131,121,153,124,161,131,159,137,166" alt="scot" />
+                <area class="ni" shape="poly" coords="117,176,97,192,91,193,83,190,79,179,70,182,71,187,64,190,53,182,58,163,71,154,80,147,91,143,99,143" alt="ni" />
+            </map>
+        </div> <!--#container-map-->
+
+        <div id="areas">
+            <ul id="regions">
+                <li class="nw">North West England <span class="nw-n"></span></li>
+                <li class="ne">North East England <span class="ne-n"></span></li>
+                <li class="yl">Yorkshire &amp; Lincolnshire <span class="yl-n"></span></li>
+                <li class="wm">West Midlands <span class="wm-n"></span></li>
+                <li class="em">East Midlands <span class="em-n"></span></li>
+                <li class="sw">West &amp; South West <span class="sw-n"></span></li>
+                <li class="e">East <span class="e-n"></span></li>
+                <li class="s">South <span class="s-n"></span></li>
+                <li class="se">London &amp; South East <span class="se-n"></span></li>
+                <li class="scot">Scotland <span class="scot-n"></span></li>
+                <li class="ni">Northern Ireland <span class="ni-n"></span></li>
+                <li class="w">Wales <span class="w-n"></span></li>
+            </ul>
+            
+            <div id="counties">
+            
+                <!--start-->
+                <div id="st-c" class="counties-container">
+                    <p class="tip">Please select the regions and/or counties you wish to cover either using the list to the left or the map.</p>
+                    <p class="tip">Tip: Double clicking a region will select all counties in that region.</p>
+                </div>
+            
+                <!--nw-->
+                <div id="nw" class="counties-container">
+                    <h2>North West</h2>
+                     
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="nw-t">
+                        <input type="checkbox" /><label>Greater Manchester</label>
+                        <input type="checkbox" /><label>Lancashire</label>
+                        <input type="checkbox" /><label>Merseyside</label>
+                        <input type="checkbox" /><label>Cheshire</label>
+                        <input type="checkbox" /><label>Cumbria</label>
+                    </fieldset>
+                </div>
+                
+                
+                <!--ne-->
+                <div id="ne" class="counties-container">
+                    <h2>North East</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="ne-t">
+                        <input type="checkbox" /><label>County Durham</label>
+                        <input type="checkbox" /><label>Northumberland</label>
+                        <input type="checkbox" /><label>Tyne and Wear</label>
+                        <input type="checkbox" /><label>Tees Valley</label>
+                    </fieldset>           
+                </div>
+                
+                <!--yl-->
+                <div id="yl" class="counties-container">
+                    <h2>Yorkshire &amp; Lincolnshire</h2>
+        <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="yl-t">
+                        <input type="checkbox" /><label>Yorkshire and the Humber</label>
+                        <input type="checkbox" /><label>West Yorkshire</label>
+                        <input type="checkbox" /><label>South Yorkshire</label>
+                        <input type="checkbox" /><label>East Riding of Yorkshire</label>
+                        <input type="checkbox" /><label>North Yorkshire</label>
+                        <input type="checkbox" /><label>North Lincolnshire</label>
+                        <input type="checkbox" /><label>North East Lincolnshire</label>
+                    </fieldset>
+                </div>
+                
+                <!--wm-->
+                <div id="wm" class="counties-container">
+                    <h2>West Midlands</h2>
+        <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="wm-t">
+                        <input type="checkbox" /><label>Staffordshire</label>
+                        <input type="checkbox" /><label>Worcestershire</label>
+                        <input type="checkbox" /><label>Warwickshire</label>
+                        <input type="checkbox" /><label>Shropshire</label>
+                        <input type="checkbox" /><label>Herefordshire</label>
+                    </fieldset>
+                </div>
+                
+                <!--em-->
+                <div id="em" class="counties-container">
+                    <h2>East Midlands</h2>
+        <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="em-t">
+                        <input type="checkbox" /><label>Derbyshire</label>
+                        <input type="checkbox" /><label>Nottinghamshire</label>
+                        <input type="checkbox" /><label>Lincolnshire</label>
+                        <input type="checkbox" /><label>Leicestershire</label>
+                        <input type="checkbox" /><label>Rutland</label>
+                        <input type="checkbox" /><label>Northamptonshire</label>
+                    </fieldset>
+                    
+                </div>
+                
+                <!--sw-->
+                <div id="sw" class="counties-container">
+                    <h2>South West</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="sw-t">
+                        <input type="checkbox" /><label>Somerset</label>
+                        <input type="checkbox" /><label>Bristol</label>
+                        <input type="checkbox" /><label>Gloucestershire</label>
+                        <input type="checkbox" /><label>Wiltshire</label>
+                        <input type="checkbox" /><label>Dorset</label>
+                        <input type="checkbox" /><label>Devon</label>
+                        <input type="checkbox" /><label>Cornwall</label>
+                    </fieldset>
+                </div>
+                
+                <!--e-->
+                <div id="e" class="counties-container">
+                    <h2>East</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="e-t">
+                        <input type="checkbox" /><label>Essex</label>
+                        <input type="checkbox" /><label>Hertfordshire</label>
+                        <input type="checkbox" /><label>Bedfordshire</label>
+                        <input type="checkbox" /><label>Cambridgeshire</label>
+                        <input type="checkbox" /><label>Norfolk</label>
+                        <input type="checkbox" /><label>Suffolk</label>
+                    </fieldset>
+                    
+                </div>
+                
+                <!--s-->
+                <div id="s" class="counties-container">
+                    <h2>South</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="s-t">
+                        <input type="checkbox" /><label>Berkshire</label>
+                        <input type="checkbox" /><label>Hampshire</label>
+                        <input type="checkbox" /><label>Wiltshire</label>
+                        <input type="checkbox" /><label>Oxford</label>
+                    </fieldset>
+                </div>
+                
+                <!--se-->
+                <div id="se" class="counties-container">
+                    <h2>South East</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="se-t">
+                        <input type="checkbox" /><label>Greater London</label>
+                        <input type="checkbox" /><label>Kent</label>
+                        <input type="checkbox" /><label>East Sussex</label>
+                        <input type="checkbox" /><label>West Sussex</label>
+                        <input type="checkbox" /><label>Surrey</label>
+                        <input type="checkbox" /><label>Hampshire</label>
+                        <input type="checkbox" /><label>Buckinghamshire</label>
+                    </fieldset>
+                </div>
+                
+                <!--scot-->
+                <div id="scot" class="counties-container">
+                    <h2>Scotland</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="scot-t">
+                        <input type="checkbox" /><label>Angus &amp; Dundee</label>
+                        <input type="checkbox" /><label>Argyll</label>
+                        <input type="checkbox" /><label>Ayrshire</label>
+                        <input type="checkbox" /><label>Dumfries &amp; Galloway</label>
+                        <input type="checkbox" /><label>Edinburgh &amp; the Lothians</label>
+                        <input type="checkbox" /><label>Fife</label>
+                        <input type="checkbox" /><label>Glasgow &amp; Clyde Valley</label>
+                        <input type="checkbox" /><label>The Scottish Highlands</label>
+                        <input type="checkbox" /><label>Orkney</label>
+                        <input type="checkbox" /><label>The Outer &amp; Inner Hebrides</label>
+                        <input type="checkbox" /><label>Perthshire</label>
+                        <input type="checkbox" /><label>The Scottish Borders</label>
+                        <input type="checkbox" /><label>The Shetland Islands</label>
+                        <input type="checkbox" /><label>Stirling &amp; The Trossachs</label>
+                    </fieldset>
+                </div>
+                
+                <!--ni-->
+                <div id="ni" class="counties-container">
+                    <h2>Northern Ireland</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="ni-t">
+                        <input type="checkbox" /><label>County Antrim</label>
+                        <input type="checkbox" /><label>County Armagh</label>
+                        <input type="checkbox" /><label>County Down</label>
+                        <input type="checkbox" /><label>County Fermanagh</label>
+                        <input type="checkbox" /><label>County Londonderry</label>
+                        <input type="checkbox" /><label>County Tyrone</label>
+                    </fieldset>  
+                    
+                </div>
+                
+                <!--w-->
+                <div id="w" class="counties-container">
+                    <h2>West</h2>
+                    <p class="select"><a class="selectall" title="Select All">Select All</a> | <a class="deselectall" title="Deselect All">Deselect All</a></p>
+                    <fieldset class="w-t">
+                        <input type="checkbox" /><label>Anglesey</label>
+                        <input type="checkbox" /><label>Conwy Valley</label>
+                        <input type="checkbox" /><label>Denbighshire</label>
+                        <input type="checkbox" /><label>Flint</label>
+                        <input type="checkbox" /><label>Wrexham</label>
+                        <input type="checkbox" /><label>Gwynedd</label>
+                        <input type="checkbox" /><label>Powys</label>
+                        <input type="checkbox" /><label>Cardiganshire</label>
+                        <input type="checkbox" /><label>Pembrokshire</label>
+                        <input type="checkbox" /><label>Carmathenshire</label>
+                        <input type="checkbox" /><label>Glamorgan</label>
+                        <input type="checkbox" /><label>Monmouthshire</label>
+                    </fieldset>
+                </div>
+                
+            </div> <!--.counties-->
+            
+        </div> <!--.areas-->
+
+<div class="clear"></div>
+            
+</div> <!--#map-box-->
+            
+<input class="submit" type="submit" value="Submit" onclick="alert('For a full description of this demo, please visit: http://www.ianlunn.co.uk/blog/bbc-news-jquery-map/');" />
+        
+</form>
+
+</body>
+</html>
